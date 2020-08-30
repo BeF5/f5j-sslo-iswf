@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "u'SSLO セットアップガイド i-FILTER編'"
-copyright = "2020, u'F5ネットワークスジャパン合同会社'"
-author = "u'F5ネットワークスジャパン合同会社'"
+project = 'SSLO セットアップガイド i-FILTER編'
+copyright = "2020, F5ネットワークスジャパン合同会社'
+author = 'F5ネットワークスジャパン合同会社'
 
 
 # -- General configuration ---------------------------------------------------

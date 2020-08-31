@@ -3,9 +3,9 @@
 
 本ガイドは、以下の製品バージョンを利用して、作成しております。
 
-# 利用バージョン
+#. 利用バージョン
 
-.. csv-table:: Version
+.. csv-table:: 
         :header: "製品名", "バージョン"
         :widths: 30, 40
 
@@ -13,9 +13,9 @@
         "i-FILTER ICAP Server (Linux) ", "Ver.10.40R01-20200310 (CentOS v7.7.1908)"
 
 
-# 本ガイドにおける構成イメージ
+#. 本ガイドにおける構成イメージ
 
 .. figure:: images/mod2-1.png
    :scale: 100%
-   :align: left
+   :align: center
    構成イメージ

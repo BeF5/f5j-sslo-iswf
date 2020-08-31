@@ -8,10 +8,10 @@
 #. ライセンスをアクティベーションします。
       
 #. 以下のモジュールをプロビジョニングします。
+   .. image: images/mod3-2.png
    :: 
       SSLO（SSL可視化）：LTM、AVR、iRulesLX、SSLO
       APM（認証）：APM
-   .. image: images/mod3-2.png
    |  
 #. Nextボタンを押します。
    

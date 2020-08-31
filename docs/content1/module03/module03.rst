@@ -4,7 +4,7 @@
 #. 次へボタンを押します。
 
 .. figure:: images/mod3-1.png
-   :scale: 60%
+   :scale: 100%
    :align: left
 
 #. ライセンスをアクティベーションします。
@@ -14,7 +14,7 @@
 　    APM（認証）：APM
 
 .. figure:: images/mod3-2.png
-   :scale: 60%
+   :scale: 100%
    :align: left
 
 #. Nextボタンを押します。

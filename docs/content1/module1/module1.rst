@@ -4,7 +4,7 @@ F5 SSLOとi-FILTER ICAP版連携の流れ
 F5 SSLOとi-FILTER　ICAP版の連携の流れは以下の通りです。
 
 .. figure:: images/mod1-1.png
-   :scale: 50%
+   :scale: 100%
    :align: center
 
    連携の流れ

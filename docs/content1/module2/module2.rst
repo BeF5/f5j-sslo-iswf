@@ -16,6 +16,6 @@
 本ガイドにおける構成イメージ
 
 .. figure:: images/mod2-1.png
-   :scale: 50%
+   :scale: 30%
    :align: center
    構成イメージ

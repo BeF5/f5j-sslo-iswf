@@ -10,9 +10,7 @@
 #. 以下のモジュールをプロビジョニングします。
    
    .. image: images/mod3-2.png
-   :: 
-      SSLO（SSL可視化）：LTM、AVR、iRulesLX、SSLO
-      APM（認証）：APM
+   |  
 #. Nextボタンを押します。
    
    .. image:: images/mod3-3.png

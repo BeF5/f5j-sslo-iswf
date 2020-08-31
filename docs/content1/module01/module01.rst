@@ -7,8 +7,6 @@ F5 SSLOとi-FILTER　ICAP版の連携の流れは以下の通りです。
    :scale: 100%
    :align: center
 
-   連携の流れ
-
 
 #. クライアントがパソコン(AD)にログオンします。 
 #. SSLOでユーザ認証を実施し(NTLM認証、Kerberos認証の場合は自動的に認証が実施されます)、SSL通信を復号します。

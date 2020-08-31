@@ -9,4 +9,4 @@ F5 SSLOとi-FILTER ICAP版の連携設定
    :caption: 目次:
    :glob:
 
-   module*/module*
+   module**/module**

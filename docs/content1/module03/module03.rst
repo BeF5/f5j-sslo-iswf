@@ -11,8 +11,8 @@
    :: 
       SSLO（SSL可視化）：LTM、AVR、iRulesLX、SSLO
       APM（認証）：APM
-      .. image: images/mod3-2.png
-      |  
+   .. image: images/mod3-2.png
+   |  
 #. Nextボタンを押します。
    
    .. image:: images/mod3-3.png

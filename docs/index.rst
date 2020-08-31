@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-BF5 SSLO セットアップガイド i-FILTER編
+F5 SSLO セットアップガイド i-FILTER編
 ==============================================
 最終更新日: 2020年8月31日
 

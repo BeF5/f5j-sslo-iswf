@@ -7,7 +7,7 @@
    |  
 #. ライセンスをアクティベーションします。
       
-#. 以下のモジュール（SSLO（SSL可視化）：LTM,AVR,iRulesLX,SSLO、APM（認証）：APM） をプロビジョニングします。
+#. 以下のモジュール（（SSL復号・再暗号化：LTM,AVR,iRulesLX,SSLO）＆（認証：APM）） をプロビジョニングします。（ライセンスはSSLOとAPMの２つを利用しています。）
    
    .. image:: images/mod3-2.png
    |  

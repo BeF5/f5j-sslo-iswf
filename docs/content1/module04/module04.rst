@@ -11,7 +11,7 @@
     |  
 #. Choose Fileにて、先程ダウンロードしたRPMを選択し、Upload and Installを押します。
    
-   .. image:: images/mod4-3.png
+    .. image:: images/mod4-3.png
     |  
 #. バージョンがアップグレードされていることを確認します。
    

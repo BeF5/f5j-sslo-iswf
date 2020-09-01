@@ -9,11 +9,11 @@
       
 #. 以下のモジュールをプロビジョニングします。
    
-   .. image: images/mod3-2.png
+   .. image:: images/mod3-2.png
    |  
 #. Nextボタンを押します。
    
-   .. image: images/mod3-3.png
+   .. image:: images/mod3-3.png
    |  
 #. ホスト名、タイムゾーン、Rootパスワードを設定して、Nextボタンを押します。
    

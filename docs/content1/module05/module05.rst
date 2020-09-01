@@ -11,5 +11,5 @@ Networkの基本設定
     |  
 #. デフォルトゲートウェイの設定を行います。
    
-   .. image: images/mod5-3.png
+   .. image:: images/mod5-3.png
     |  

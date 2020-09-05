@@ -5,7 +5,7 @@ Networkの基本設定
 
     .. image:: images/mod5-1.png
     |  
-#. 	Self IPの設定を行います。
+#. Self IPの設定を行います。
 
     .. image:: images/mod5-2.png
     |  

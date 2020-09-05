@@ -3,7 +3,7 @@ NTLM認証設定
 
 　APMで行う認証の設定を行います。ここでは、NTLM認証の設定を行います。ADサーバ（ドメインコントローラ、DNS）の構築済みであることを前提としております。
 
-#. 	[Access] – [Authentication] – [NTLM] – [Machine Account]を選択し、Createボタンを押します。
+#. [Access] – [Authentication] – [NTLM] – [Machine Account]を選択し、Createボタンを押します。
 
     .. image:: images/mod8-1.png
     |  

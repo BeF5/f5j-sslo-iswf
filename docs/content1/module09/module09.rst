@@ -6,6 +6,7 @@
 #. 	[Local Traffic] – [iRules] にて、Createボタンを押します。任意の名前を入力して、Definitionに以下サンプルiRuleを入力し、Finishedボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
 
     例１）HTTPリクエストヘッダに認証情報を挿入するためのiRuleサンプル
+    
     .. code-block:: bash
 
             ###  Add this iRule to Virtual Server:ssloS_XXXX-t-4 ###
@@ -28,6 +29,7 @@
 
             }
     例２）ICAPリクエストヘッダに認証情報を挿入するためのiRuleサンプル
+    
     .. code-block:: bash
 
             ### Add this iRule to ssloS-XXXX-req ###

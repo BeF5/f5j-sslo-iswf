@@ -5,19 +5,19 @@ i-FILTERのHTTP/HTTPS判別用DBの対応設定（Local Traffic Policyの設定�
 
 #. 	[Local Traffic] - [Policies] - [Policies List]にて、Createボタンを押します。
 
-    .. image:: images/mod７-1.png
+    .. image:: images/mod7-1.png
     |  
 #. 任意のポリシー名を入力し、Create Policyボタンを押します。
 
-    .. image:: images/mod７-2.png
+    .. image:: images/mod7-2.png
     |  
 #. HTTPS用のルールを作成します。RulesのCreateボタンを押します。
 
-    .. image:: images/mod７-３.png
+    .. image:: images/mod7-３.png
     |  
 #. 任意のRule名を入力し、[Match all of the following conditions:]の”＋”マークをクリックし、以下のように入力します。
 
-    .. image:: images/mod７-４.png
+    .. image:: images/mod7-４.png
     .. csv-table:: 
          :header: "Match all of the following conditions:", "必要有無"
          :widths: 50, 5
@@ -28,7 +28,7 @@ i-FILTERのHTTP/HTTPS判別用DBの対応設定（Local Traffic Policyの設定�
     |  
 #. 同様に、[Do the following when the traffic is matched:] の”＋”マークをクリックし、以下のように入力し、Saveボタンを押します。（デバック用のログルールは任意で追加します。）
 
-    .. image:: images/mod７-5.png
+    .. image:: images/mod7-5.png
     .. csv-table:: 
          :header: "Do the following when the traffic is matched:", "必要有無"
          :widths: 95, 5
@@ -39,7 +39,7 @@ i-FILTERのHTTP/HTTPS判別用DBの対応設定（Local Traffic Policyの設定�
     |  
 #. 同様にHTTP用のルールを作成します。
 
-    .. image:: images/mod７-6.png
+    .. image:: images/mod7-6.png
     .. csv-table:: 
          :header: "Match all of the following conditions:", "必要有無"
          :widths: 55, 5
@@ -57,10 +57,10 @@ i-FILTERのHTTP/HTTPS判別用DBの対応設定（Local Traffic Policyの設定�
     |  
 #. ２つのルール作成後は、以下のようになります。Save Draftボタンを押します。
 
-    .. image:: images/mod７-7.png
+    .. image:: images/mod7-7.png
     |  
 #. Publishボタンを押すと、以下のようになります。
 
-    .. image:: images/mod７-8.png
+    .. image:: images/mod7-8.png
     |  
     

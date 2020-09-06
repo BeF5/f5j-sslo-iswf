@@ -5,15 +5,15 @@
 
     .. image:: images/mod4-1.png
     |  
-#. 	[SSL Orchestrator] – [Configuration]の画面にて、右上のアップグレードボタンを押します。
+#. [SSL Orchestrator] – [Configuration]の画面にて、右上のアップグレードボタンを押します。
 
     .. image:: images/mod4-2.png
     |  
-#. 	Choose Fileにて、先程ダウンロードしたRPMを選択し、Upload and Installを押します。
+#. Choose Fileにて、先程ダウンロードしたRPMを選択し、Upload and Installを押します。
 
     .. image:: images/mod4-3.png
     |  
-#. 	[バージョンがアップグレードされていることを確認します。。
+#. [バージョンがアップグレードされていることを確認します。。
 
     .. image:: images/mod4-4.png
     |  

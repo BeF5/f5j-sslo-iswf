@@ -54,7 +54,6 @@ Transparent Proxy用Virtual Serverの作成
                 set OLDURI [HTTP::uri]
                 HTTP::uri "https://[HTTP::host]$OLDURI"
             }
-
     |  
 #. 次に、SSL用のTransparent Virtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、”0.0.0.0/0”を入力、Service Portにて、”15080”と入力します。
 
@@ -107,7 +106,6 @@ Explicit Proxy用Virtual Serverの作成
                     snat automap
                 }        
             }
-
     |  
     例）URI書き換え用のiRule
 
@@ -124,7 +122,6 @@ Explicit Proxy用Virtual Serverの作成
                 ADAPT::enable request false
             }
         }
-        
     |  
 #. 次にExplicit Proxy用のVirtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、プロキシ接続用のアドレスを入力、Service Portにて、プロキシとして利用するポート番号を入力します。
 

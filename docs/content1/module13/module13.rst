@@ -45,7 +45,7 @@ Transparent Proxy用Virtual Serverの作成
     .. image:: images/mod13-8.png
     |  
 #. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。[Local Traffic] – [iRules] にて、Createボタンを押します。任意の名前を入力して、Definitionに以下サンプルiRuleを入力し、Finishedボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
-    | 例）URI書き換え用のiRule
+    例）URI書き換え用のiRule
 
     .. code-block:: bash
 
@@ -54,7 +54,7 @@ Transparent Proxy用Virtual Serverの作成
                 set OLDURI [HTTP::uri]
                 HTTP::uri "https://[HTTP::host]$OLDURI"
             }
-    |  
+
 #. 次に、SSL用のTransparent Virtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、”0.0.0.0/0”を入力、Service Portにて、”15080”と入力します。
 
     .. image:: images/mod13-9.png
@@ -86,7 +86,7 @@ Explicit Proxy用Virtual Serverの作成
 #. 次に、以下の２つのiRuleを作成します。
     * インターネット接続用のHTTP/HTTPsトラフィックとi-FILTERブロックタイトル画面接続トラフィックを分けるiRule
     * 上記後者のトラフィックにおいて、i-FILTER向けにURIを書き換えるiRule
-    |  
+ 
     [Local Traffic] – [iRules] にて、Createボタンを押します。任意の名前を入力して、Definitionに以下サンプルiRuleを入力し、Finishedボタンを押します。本iRuleでは、トラフィックの内容をみて、ICAPプロファイルを紐付けるかの判断もしています。また、iRule内のホスト名は、環境にあわせたFQDN/IPアドレスに変更して頂く必要があります。
     （以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。また、以下の２つのiRuleは、1つのファイルにしていただいても構いません。）
       
@@ -106,7 +106,6 @@ Explicit Proxy用Virtual Serverの作成
                     snat automap
                 }        
             }
-    |  
     例）URI書き換え用のiRule
 
     .. code-block:: bash
@@ -122,7 +121,7 @@ Explicit Proxy用Virtual Serverの作成
                 ADAPT::enable request false
             }
         }
-    |  
+
 #. 次にExplicit Proxy用のVirtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、プロキシ接続用のアドレスを入力、Service Portにて、プロキシとして利用するポート番号を入力します。
 
     .. image:: images/mod13-15.png
@@ -164,7 +163,7 @@ i-FILTER側の設定
 -----------------------------------
 
 #. ブラウザのプロキシ設定にて、13.３で作成したExplicit ProxyのIPアドレスに紐づくFQDNまたは、IPアドレスに変更します。
-     
+    |  
 #. ブラックリストの宛先への通信がブロックされ、タイトル画像が表示されることを確認します。
 
     .. image:: images/mod13-22.png

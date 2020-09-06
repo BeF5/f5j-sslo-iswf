@@ -8,7 +8,7 @@
     .. code-block:: bash
 
             curl -vk --proxy 10.100.35.201:3128 –proxy-ntlm –proxy-user 'se001:ilovef5!' https://xxxx.xxx
-    |  
+ 
 #. ブラウザで確認する場合は、プロキシ設定にSSLOを加えてからWEB接続を確認します。
     
 #. WEB通信が成功するか確認します。サーバ証明書がSSLOのCA証明書で書き換えられていることを確認します。

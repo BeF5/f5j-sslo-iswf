@@ -1,7 +1,7 @@
 認証ヘッダ挿入用iRuleの作成
 ========================================
 
-　ここでは、ユーザ認証ヘッダ（X-Authenticated-User）とAPMで認証されたユーザ名（session.logon.last.username）をICAPリクエストに挿入するためのiRuleを作成します。ICAPはHTTPをカプセリングしますので、認証情報を挿入するためには以下の２つのiRuleが必要となります。また、i-FILTER ICAP版に認証ユーザ名を理解してもらうために、ユーザ名の手前に **ldap:/// ** を加え、**Base64エンコーディング** をする必要があります。
+　ここでは、ユーザ認証ヘッダ（X-Authenticated-User）とAPMで認証されたユーザ名（session.logon.last.username）をICAPリクエストに挿入するためのiRuleを作成します。ICAPはHTTPをカプセリングしますので、認証情報を挿入するためには以下の２つのiRuleが必要となります。また、i-FILTER ICAP版に認証ユーザ名を理解してもらうために、ユーザ名の手前に **ldap:///** を加え、**Base64エンコーディング** をする必要があります。
 
 #. **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、**Definition** に以下サンプルiRuleを入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
 

@@ -1,8 +1,7 @@
 i-FILTERブロック画面のタイトル画像の表示、パスワードブロック解除の設定
 ====================================================================
 
-　10.3章にて、SSLO連携をするとブロック画面のタイトルが標準では表示されないと記載しましたが、以下の設定を追加することによって、表示させることが可能です。本設定を行うことにより、パスワード入力によるブロック解除も連携が可能となります。
-　上記を実現するためには、下図の4つのVirtual Serverが追加で必要となります。ここでは、下図の④②①③の順で作成していきます。
+　10.3章にて、SSLO連携をするとブロック画面のタイトルが標準では表示されないと記載しましたが、以下の設定を追加することによって、表示させることが可能です。本設定を行うことにより、パスワード入力によるブロック解除も連携が可能となります。上記を実現するためには、下図の4つのVirtual Serverが追加で必要となります。ここでは、下図の④②①③の順で作成していきます。
 
 .. image:: images/mod13-1.png
 |  
@@ -44,7 +43,7 @@ Transparent Proxy用Virtual Serverの作成
 
     .. image:: images/mod13-8.png
     |  
-#. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。 **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、 **Definition** に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
+#. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。**Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。 **任意の名前** を入力して、 **Definition** に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
     例）URI書き換え用のiRule
 
     .. code-block:: bash
@@ -67,7 +66,7 @@ Transparent Proxy用Virtual Serverの作成
 
     .. image:: images/mod13-11.png
     |  
-#. **iRules**にて、作成済みの **iRule** を選択し、:guilabel:`Finished`ボタンを押します。
+#. **iRules** にて、作成済みの **iRule** を選択し、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-12.png
     |  
@@ -75,7 +74,7 @@ Transparent Proxy用Virtual Serverの作成
 Explicit Proxy用Virtual Serverの作成
 --------------------------------------------
 
-#. まず、プロキシ用のExplicit Profileを作成します。**Local Traffic >> Profiles >> Services >> HTTP** にて、:guilabel:`Create`ボタンを押します。**Proxy Mode** にて、**Explicit** を選択します。
+#. まず、プロキシ用のExplicit Profileを作成します。**Local Traffic >> Profiles >> Services >> HTTP** にて、:guilabel:`Create` ボタンを押します。**Proxy Mode** にて、**Explicit** を選択します。
 
     .. image:: images/mod13-13.png
     | 
@@ -142,7 +141,7 @@ Explicit Proxy用Virtual Serverの作成
 Reject用Virtual Serverの作成
 -----------------------------------
 
-#. 最後に、**15080ポート以外はブロック** をするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。） **任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて ** * **と入力します。**VLAN and Tunnel Traffic**にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
+#. 最後に、**15080ポート以外はブロック** をするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。） **任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて * と入力します。**VLAN and Tunnel Traffic**にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-19.png
     |  
@@ -162,7 +161,7 @@ i-FILTER側の設定
 クライアントからの接続テスト
 -----------------------------------
 
-#. ブラウザの **プロキシ設定** にて、作成済みの **Explicit ProxyのIPアドレスに紐づくFQDN** または、IPアドレスに変更します。
+#. ブラウザの **プロキシ設定** にて、作成済みのExplicit ProxyのIPアドレスに紐づく **FQDN** または、IPアドレスに変更します。
     |  
 #. ブラックリストの宛先への通信がブロックされ、タイトル画像が表示されることを確認します。
 

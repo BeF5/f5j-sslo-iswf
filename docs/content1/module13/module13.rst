@@ -141,7 +141,7 @@ Explicit Proxy用Virtual Serverの作成
 Reject用Virtual Serverの作成
 -----------------------------------
 
-#. 最後に、**15080ポート以外はブロック** をするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。） **任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて * と入力します。**VLAN and Tunnel Traffic**にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
+#. 最後に、**15080ポート以外はブロック** をするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。） **任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて * と入力します。**VLAN and Tunnel Traffic** にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-19.png
     |  

@@ -11,6 +11,7 @@ ICAP service request用Virtual Serverの作成
 --------------------------------------------
 
 #. まずはICAP用のプロファイルを以下のように作成します。[Local Traffic] – [Profiles] – [Services] – [ICAP]にて、Createボタンを押します。任意の名前を入力し、URIには以下のように入力し、Finishedボタンを押します。
+    
     **icap://${SERVER_IP}:${SERVER_PORT}/REQMOD**
 
     .. image:: images/mod13-2.png
@@ -44,14 +45,16 @@ Transparent Proxy用Virtual Serverの作成
     .. image:: images/mod13-8.png
     |  
 #. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。[Local Traffic] – [iRules] にて、Createボタンを押します。任意の名前を入力して、Definitionに以下サンプルiRuleを入力し、Finishedボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
-    例）URI書き換え用のiRule
+    | 例）URI書き換え用のiRule
 
     .. code-block:: bash
+
             ###  Add this iRule to Transparent Virtual Server ###
             when HTTP_REQUEST {
                 set OLDURI [HTTP::uri]
                 HTTP::uri "https://[HTTP::host]$OLDURI"
             }
+
     |  
 #. 次に、SSL用のTransparent Virtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、”0.0.0.0/0”を入力、Service Portにて、”15080”と入力します。
 
@@ -91,6 +94,7 @@ Explicit Proxy用Virtual Serverの作成
     例）トラフィックを分ける用のiRule
 
     .. code-block:: bash
+
             ###  Add this iRule to Explicit Virtual Server ###
             when HTTP_PROXY_REQUEST {
                 set F5PROXY "bigip.f5jplab.local"
@@ -103,10 +107,12 @@ Explicit Proxy用Virtual Serverの作成
                     snat automap
                 }        
             }
+
     |  
     例）URI書き換え用のiRule
 
     .. code-block:: bash
+
         ###  Add this iRule to Explicit Virtual Server ###
         when HTTP_REQUEST {
             set F5PROXY "bigip.f5jplab.local"
@@ -118,6 +124,7 @@ Explicit Proxy用Virtual Serverの作成
                 ADAPT::enable request false
             }
         }
+        
     |  
 #. 次にExplicit Proxy用のVirtual Serverを作成します。[Local Traffic] – [Virtual Servers]にて、Createボタンを押します。任意の名前を入力し、Destination Address/Maskにて、プロキシ接続用のアドレスを入力、Service Portにて、プロキシとして利用するポート番号を入力します。
 

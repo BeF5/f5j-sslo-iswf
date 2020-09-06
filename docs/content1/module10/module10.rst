@@ -97,8 +97,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-24.png
     |  
-#. i-FILTER ICAP版との連携はICAPリクエストのみ設定をすればよいので、ICAPレスポンスの設定を外します。SSLO標準では、ICAPレスポンスは必須となっているので、Protectedを外してから以下の操作をします。本設定をしないと/var/log/ltmに”Unexpected status code 501 received from server”といったエラーメッセージが表示されます。
-Servicesにおいて、作成済みのService（ICAPのサービス）を選択し、Protectedの鍵マークを外します。
+#. i-FILTER ICAP版との連携はICAPリクエストのみ設定をすればよいので、ICAPレスポンスの設定を外します。SSLO標準では、ICAPレスポンスは必須となっているので、Protectedを外してから以下の操作をします。本設定をしないと/var/log/ltmに”Unexpected status code 501 received from server”といったエラーメッセージが表示されます。Servicesにおいて、作成済みのService（ICAPのサービス）を選択し、Protectedの鍵マークを外します。
 
     .. image:: images/mod10-25.png
     |  

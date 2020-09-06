@@ -5,7 +5,7 @@
 
     .. image:: images/mod4-1.png
     |  
-#. :menuselection:`SSL Orchestrator --> Configuration` の画面にて、右上の :guilabel:`アップグレードボタン` を押します。
+#. **SSL Orchestrator >> Configuration** の画面にて、右上の :guilabel:`アップグレードボタン` を押します。
 
     .. image:: images/mod4-2.png
     |  

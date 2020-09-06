@@ -1,7 +1,7 @@
 SSLO Guided ConfigurationによるSSLOの設定
 ================================================
 
-#. **SSL Orchestrator >> Configuration** を選択します。DNSとNTPとRouteがConfigureとなっているのを確認し、:guilabel:`Next`ボタンを押します。
+#. **SSL Orchestrator >> Configuration** を選択します。**DNS** と **NTP** と **Route** が **Configure** となっているのを確認し、:guilabel:`Next` ボタンを押します。
 
     .. image:: images/mod10-1.png
     |  
@@ -37,7 +37,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-9.png
     |  
-#. **Request Modification URI Path** に **/REQMOD** を入力し、**Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。（i-FILTER ICAP版は今日現在 **ICAP Preview** に対応していないので、**０** を入力します。）
+#. **Request Modification URI Path** に **/REQMOD** を入力し、**Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。（i-FILTER ICAP版は **ICAP Preview** に対応していないので、**０** を入力します。）
 
     .. image:: images/mod10-10.png
     |  
@@ -57,7 +57,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-14.png
     |  
-#. All Trafficの:guilabel:`ペンマーク` をクリックします。
+#. All Trafficの :guilabel:`ペンマーク` をクリックします。
 
     .. image:: images/mod10-15.png
     |  
@@ -81,7 +81,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-20.png
     |  
-#. 必要に応じて、設定内容を見直し、:guilabel:`Save&Nextボタン` を押します。
+#. 必要に応じて、設定内容を見直し、:guilabel:`Save&Next` ボタンを押します。
 
     .. image:: images/mod10-21.png
     |  
@@ -97,7 +97,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-24.png
     |  
-#. i-FILTER ICAP版との連携はICAPリクエストのみ設定をすればよいので、ICAPレスポンスの設定を外します。SSLO標準では、ICAPレスポンスは必須となっているので、**Protected** を外してから以下の操作をします。本設定をしないと/var/log/ltmに **Unexpected status code 501 received from server** といったエラーメッセージが表示されます。Servicesにおいて、作成済みの **Service（ICAPのサービス）** を選択し、Protectedの **鍵**マークを外します。
+#. i-FILTER ICAP版との連携はICAPリクエストのみ設定をすればよいので、ICAPレスポンスの設定を外します。SSLO標準では、ICAPレスポンスは必須となっているので、**Protected** を外してから以下の操作をします。本設定をしないと/var/log/ltmに **Unexpected status code 501 received from server** といったエラーメッセージが表示されます。Servicesにおいて、作成済みの **Service（ICAPのサービス）** を選択し、Protectedの **鍵** マークを外します。
 
     .. image:: images/mod10-25.png
     |  
@@ -105,12 +105,12 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-26.png
     |  
-#. 次に既に作成済みの **iRule** を追加します。**Local Traffic >> Virtual Servers>> において、**ssloS_XXXX(任意)-t-4** という名称のVirtual Serverを選択し、**Resources**タブを選択、HTTPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。 
+#. 次に既に作成済みの **iRule** を追加します。**Local Traffic >> Virtual Servers>> において、**ssloS_XXXX(任意)-t-4** という名称のVirtual Serverを選択し、**Resources** タブを選択、HTTPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。 
 
 
     .. image:: images/mod10-27.png
     |  
-#. 次にICAPリクエストヘッダに加えるための **iRule** を追加します。**Local Traffic >> Virtual Servers** において、**ssloS_XXXX(任意)-req** という名称のVirtual Serverを選択し、**Resources**タブを選択、ICAPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。
+#. 次にICAPリクエストヘッダに加えるための **iRule** を追加します。**Local Traffic >> Virtual Servers** において、**ssloS_XXXX(任意)-req** という名称のVirtual Serverを選択し、**Resources** タブを選択、ICAPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。
 
 
     .. image:: images/mod10-28.png

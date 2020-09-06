@@ -19,7 +19,7 @@ NTLM認証設定
 
     .. image:: images/mod8-4.png
     |  
-#. **任意の名前** を設定し、**Machine Account Name** は **先程作成したもの** を選択します。**Domain Controller FQDN List** には **ご利用のドメイン名（FQDN名）** を指定し、:guilabel:`Finishedボタン` を押します。
+#. **任意の名前** を設定し、**Machine Account Name** は **先程作成したもの** を選択します。**Domain Controller FQDN List** には **ご利用のドメイン名（FQDN名）** を指定し、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod8-5.png
     |  

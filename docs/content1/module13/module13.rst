@@ -10,7 +10,7 @@ i-FILTERブロック画面のタイトル画像の表示、パスワードブロ
 ICAP service request用Virtual Serverの作成
 --------------------------------------------
 
-#. まずはICAP用のプロファイルを以下のように作成します。**Local Traffic >> Profiles >> Services >> ICAP** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**URI** には以下のように入力し、:guilabel:`Finished` ボタンを押します。
+#. まずはICAP用のプロファイルを以下のように作成します。 **Local Traffic >> Profiles >> Services >> ICAP** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**URI** には以下のように入力し、:guilabel:`Finished` ボタンを押します。
     
     **icap://${SERVER_IP}:${SERVER_PORT}/REQMOD**
 
@@ -24,7 +24,7 @@ ICAP service request用Virtual Serverの作成
 
     .. image:: images/mod13-4.png
     | 
-#. 最後に、**Default Pool** にて、SSLO Guided Configurationで作成済みの**Pool** を選択して、:guilabel:`Finished` ボタンを押します。
+#. 最後に、**Default Pool** にて、SSLO Guided Configurationで作成済みの **Pool** を選択して、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-5.png
     | 
@@ -44,7 +44,7 @@ Transparent Proxy用Virtual Serverの作成
 
     .. image:: images/mod13-8.png
     |  
-#. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。**Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、**Definition** に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
+#. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。 **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、 **Definition** に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
     例）URI書き換え用のiRule
 
     .. code-block:: bash
@@ -134,7 +134,7 @@ Explicit Proxy用Virtual Serverの作成
 
     .. image:: images/mod13-17.png
     |  
-#. **iRules** にて作成済みの２つのiRuleを選択して、:guilabel:`Finished` ボタンを押します。
+#. **iRules** にて作成済みの２つのiRuleを選択して、 :guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-18.png
     |  
@@ -142,7 +142,7 @@ Explicit Proxy用Virtual Serverの作成
 Reject用Virtual Serverの作成
 -----------------------------------
 
-#. 最後に、15080ポート以外はブロックをするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。）**任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて *****と入力します。**VLAN and Tunnel Traffic**にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
+#. 最後に、**15080ポート以外はブロック** をするVirtual Serverを作成します。（本Virtual Serverがなくても動作はします。） **任意の名前** を入力し、**Type** にて **Reject** を選択し、**Destination Address/Mask** にて、**0.0.0.0/0** と入力し、**Service Port** にて ** * **と入力します。**VLAN and Tunnel Traffic**にて、**Enabled on...** を選択し、**VLANs and Tunnels** にて作成済みのTunnelを選択し、:guilabel:`Finished` ボタンを押します。
 
     .. image:: images/mod13-19.png
     |  

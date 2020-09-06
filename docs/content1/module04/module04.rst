@@ -5,11 +5,11 @@
 
     .. image:: images/mod4-1.png
     |  
-#. **SSL Orchestrator >> Configuration**の画面にて、右上の**アップグレードボタン**を押します。
+#. :menuselection:`SSL Orchestrator --> Configuration` の画面にて、右上の :guilabel:`アップグレードボタン` を押します。
 
     .. image:: images/mod4-2.png
     |  
-#. **Choose File**にて、先程ダウンロードしたRPMを選択し、**Upload and Install**を押します。
+#. :guilabel:`Choose File` にて、先程ダウンロードしたRPMを選択し、:guilabel:`Upload and Install` を押します。
 
     .. image:: images/mod4-3.png
     |  

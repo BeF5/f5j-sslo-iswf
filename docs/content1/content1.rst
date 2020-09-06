@@ -1,4 +1,4 @@
-F5 SSLOとi-FILTER ICAP版の連携設定
+F5 SSLO (L3 Explicit Proxy) とi-FILTER ICAP版の連携設定
 ================================================
 
 本章では、SSLOの可視化ゾーンにi-FILTER ICAP版を配置し、ICAPプロトコルで連携する構成について、ご紹介致します。

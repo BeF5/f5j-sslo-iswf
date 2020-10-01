@@ -43,7 +43,7 @@
         
                     # Add it to ICAP header 
                     foreach x ${hdrs} {
-                    ICAP::header add [lindex [split ${x} ":"] 0] [lindex [split ${x} ":"] 1]
+                        ICAP::header add [lindex [split ${x} ":"] 0] [lindex [split ${x} ":"] 1]
                     }  
         
                 # Remove the temporary http header. But the data would show up in the ICAP header.

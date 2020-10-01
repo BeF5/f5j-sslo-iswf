@@ -1,7 +1,7 @@
-i-FILTERのHTTP/HTTPS判別用DBの対応設定（Local Traffic Policyの設定）
+i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
 ==================================================================
 
-　i-FILTER ICAP版は、HTTPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。
+　i-FILTER ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。
 
 #. **Local Traffic >> Policies >> Policies List** にて、:guilabel:`Create` ボタンを押します。
 

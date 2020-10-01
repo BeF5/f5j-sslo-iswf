@@ -5,7 +5,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-1.png
     |  
-#. **任意の名前** を設定し、SSL Orchestrator Topologiesとして、**L3 Explicit Proxy** を選択し、:guilabel:`Save&Next` ボタンを押します。
+#. **任意の名前** を設定し、SSL Orchestrator Topologiesとして、**L3 Explicit Proxy** を選択し、:guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-2.png
     |  
@@ -21,7 +21,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-5.png
     |  
-#. 期限切れの証明書や自己署名証明書に対しての動作も確認し、:guilabel:`Save&Next` を押します。
+#. 期限切れの証明書や自己署名証明書に対しての動作も確認し、:guilabel:`Save＆Next` を押します。
 
     .. image:: images/mod10-6.png
     |  
@@ -41,7 +41,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-10.png
     |  
-#. :guilabel:`Save&Next` を選択します。
+#. :guilabel:`Save＆Next` を選択します。
 
     .. image:: images/mod10-11.png
     |  
@@ -53,7 +53,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-13.png
     |  
-#. **Service Chain**ができたことを確認し、:guilabel:`Save&Next` ボタンを押します。
+#. **Service Chain** ができたことを確認し、:guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-14.png
     |  
@@ -65,11 +65,11 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-16.png
     |  
-#. :guilabel:`Save&Next` ボタンを押します。
+#. :guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-17.png
     |  
-#. **Proxy Server Settings** にクライアントからプロキシとしてアクセスさせるIPアドレスを入力し、既に作成済みの **Access Profile** を選択し、**Ingress Network** として、クライアントからアクセス可能な **VLAN** を選択し、:guilabel:`Save&Next` ボタンを押します。
+#. **Proxy Server Settings** にクライアントからプロキシとしてアクセスさせるIPアドレスを入力し、既に作成済みの **Access Profile** を選択し、**Ingress Network** として、クライアントからアクセス可能な **VLAN** を選択し、:guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-18.png
     |  
@@ -77,11 +77,11 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-19.png
     |  
-#. :guilabel:`Save&Next` ボタンを押します。
+#. :guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-20.png
     |  
-#. 必要に応じて、設定内容を見直し、 :guilabel:`Save&Next` ボタンを押します。
+#. 必要に応じて、設定内容を見直し、 :guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-21.png
     |  

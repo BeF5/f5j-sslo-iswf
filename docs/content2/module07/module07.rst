@@ -6,6 +6,7 @@ i-FILTERにてHTTP/HTTPS判別するためのiRuleの作成）
 #. **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、**Definition** に以下サンプルiRuleを入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
 
     例）HTTPリクエストにi-FILTER連携のヘッダを挿入するためのiRuleサンプル  
+
     .. code-block:: bash
 
             ###  Add this iRule to Virtual Server:ssloS_XXXX-t-4 ###
@@ -31,9 +32,8 @@ i-FILTERにてHTTP/HTTPS判別するためのiRuleの作成）
 
                 }
             }    
-
-接続テストをされる際には、変数情報をログ出力するなどして意図する値が入っているか確かめて頂くことをおすすめします。
-| 例１）ヘッダー内容を確認するデバッグ
-| foreach attr "[HTTP::header names]" {
-|     log local0. "$attr : [HTTP::header value $attr]"
-| }
+    | 接続テストをされる際には、変数情報をログ出力するなどして意図する値が入っているか確かめて頂くことをおすすめします。
+    | 例１）ヘッダー内容を確認するデバッグ
+    | foreach attr "[HTTP::header names]" {
+    |     log local0. "$attr : [HTTP::header value $attr]"
+    | }

@@ -93,7 +93,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-23.png
     |  
-#. :guilabel:`Save & Next` ボタンを押します。
+#. :guilabel:`Save＆Next` ボタンを押します。
 
     .. image:: images/mod10-24.png
     |  

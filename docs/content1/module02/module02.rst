@@ -10,7 +10,7 @@
          :widths: 30, 40
 
          "F5 SSL Orchestrator", "v15.1.0.2-0.0.9 ‒ 7.2.16"
-         "i-FILTER ICAP Server (Linux) ", "| Ver.10.40R01-20200310 (CentOS v7.7.1908 ※)
+         "i-FILTER ICAP Server (Linux) ", "| Ver.10.40R01-20200310 (CentOS v7.7.1908 ※）
          | ※ デジタルアーツ様による製品サポートOSはRed Hat Enterprise Linuxとなります。"
     
 #. 本ガイドにおける構成イメージ

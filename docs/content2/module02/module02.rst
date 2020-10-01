@@ -10,9 +10,9 @@
          :widths: 30, 40
 
          "F5 SSL Orchestrator", "v15.1.0.2-0.0.9 ‒ 7.2.16"
-         "i-FILTER Proxy Server (Linux) ", "Ver.10.41R01-20200807 (CentOS v7.7.1908 ※)"
-   ※ デジタルアーツ様による製品サポートOSはRed Hat Enterprise Linuxとなります。
-   |  
+         "i-FILTER Proxy Server (Linux) ", "| Ver.10.41R01-20200807 (CentOS v7.7.1908 ※）
+         | ※ デジタルアーツ様による製品サポートOSはRed Hat Enterprise Linuxとなります。"
+
 #. 本ガイドにおける構成イメージ
 
    .. image:: images/mod2-1.png

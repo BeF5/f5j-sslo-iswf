@@ -4,7 +4,7 @@ F5 SSLOとi-FILTER PROXY版連携の流れ
 F5 SSLOとi-FILTER PROXY版の連携の流れは以下の通りです。
 
 .. figure:: images/mod1-1.png
-   :scale: 90%
+   :scale: 60%
    :align: center
 
 

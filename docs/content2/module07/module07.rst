@@ -33,6 +33,7 @@ i-FILTERにてHTTP/HTTPS判別するためのiRuleの作成）
                 }
             }    
     | 接続テストをされる際には、変数情報をログ出力するなどして意図する値が入っているか確かめて頂くことをおすすめします。
+    
     | 例１）ヘッダー内容を確認するデバッグ
     | foreach attr "[HTTP::header names]" {
     |     log local0. "$attr : [HTTP::header value $attr]"

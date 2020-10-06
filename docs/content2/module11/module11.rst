@@ -1,4 +1,4 @@
-FILTER Proxy版（Linux版）の設定
+i-FILTER Proxy版（Linux版）の設定
 ======================================
 
 　 i-FILTERのインストールは終了しているものとします。

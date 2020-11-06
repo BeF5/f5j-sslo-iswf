@@ -48,11 +48,11 @@ Explicit HTTPS Proxy用Virtual Serverの作成
 
     .. code-block:: bash
 
-            ###  Add this iRule to Explicit HTTPS Virtual Server ###
-            when HTTP_REQUEST {
-                set OLDURI [HTTP::uri]
-                HTTP::uri "https://[HTTP::host]$OLDURI"
-            }
+        ###  Add this iRule to Explicit HTTPS Virtual Server ###
+        when HTTP_REQUEST {
+            set OLDURI [HTTP::uri]
+            HTTP::uri "https://[HTTP::host]$OLDURI"
+        }
 
 #. 次に、SSL用のExplicit HTTPS Virtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、**0.0.0.0/0** を入力、**Service Port** にて、**15080** と入力します。
 
@@ -93,18 +93,18 @@ Explicit HTTP Proxy用Virtual Serverの作成
 
     .. code-block:: bash
 
-            ###  Add this iRule to Explicit Virtual Server ###
-            when HTTP_PROXY_REQUEST {
-                set F5PROXY "bigip.f5jplab.local"
-                if { [HTTP::host] contains $F5PROXY} {
-                    HTTP::proxy enable
-                    ADAPT::enable request false
-                } else {
-                    HTTP::proxy disable
-                    virtual sslo_L3ExplicitProxy.app/sslo_L3ExplicitProxy-xp-4
-                    snat automap
-                }        
-            }
+        ###  Add this iRule to Explicit Virtual Server ###
+        when HTTP_PROXY_REQUEST {
+            set F5PROXY "bigip.f5jplab.local"
+            if { [HTTP::host] contains $F5PROXY} {
+                HTTP::proxy enable
+                ADAPT::enable request false
+            } else {
+                HTTP::proxy disable
+                virtual sslo_L3ExplicitProxy.app/sslo_L3ExplicitProxy-xp-4
+                snat automap
+            }        
+        }
     例）URI書き換え用のiRule
 
     .. code-block:: bash
@@ -161,8 +161,7 @@ i-FILTER側の設定
 クライアントからの接続テスト
 -----------------------------------
 
-#. ブラウザの **プロキシ設定** にて、作成済みのExplicit ProxyのIPアドレスに紐づく **FQDN** または、IPアドレスに変更します。
-    |  
+#. ブラウザの **プロキシ設定** にて、作成済みのExplicit ProxyのIPアドレスに紐づく **FQDN** または、IPアドレスに変更します。  
 #. ブラックリストの宛先への通信がブロックされ、タイトル画像が表示されることを確認します。
 
     .. image:: images/mod13-22.png

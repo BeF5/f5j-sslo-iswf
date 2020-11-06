@@ -44,6 +44,7 @@ Explicit HTTPS Proxy用Virtual Serverの作成
     .. image:: images/mod13-8.png
     |  
 #. 次に、HTTPSトラフィックにおけるURI書き換え用のiRuleを作成します。**Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。 **任意の名前** を入力して、 **Definition** に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
+    
     例）URI書き換え用のiRule
 
     .. code-block:: bash
@@ -83,6 +84,7 @@ Explicit HTTP Proxy用Virtual Serverの作成
     .. image:: images/mod13-14.png
     |  
 #. 次に、以下の２つのiRuleを作成します。
+
     * インターネット接続用のHTTP/HTTPsトラフィックとi-FILTERブロックタイトル画面接続トラフィックを分けるiRule
     * 上記後者のトラフィックにおいて、i-FILTER向けにURIを書き換えるiRule
  

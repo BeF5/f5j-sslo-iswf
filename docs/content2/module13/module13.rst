@@ -24,45 +24,46 @@ Explicit HTTP Proxy用Virtual Serverの作成
     |  
 #. 次に、以下の２つのiRuleを作成します。
 
-  * インターネット接続用のHTTP/HTTPsトラフィックとi-FILTERブロックタイトル画面接続トラフィックを分けるiRule
-  * 上記後者のトラフィックにおいて、i-FILTER向けにヘッダーを追加するiRule
+   * インターネット接続用のHTTP/HTTPsトラフィックとi-FILTERブロックタイトル画面接続トラフィックを分けるiRule
+   * 上記後者のトラフィックにおいて、i-FILTER向けにヘッダーを追加するiRule
 
-  1つ目のiRuleでは、ホスト名でインターネット接続トラフィックと判断した場合、SSLOのExplicit用のVirtual Sererに転送します。2つ目のiRuleでは、ホスト名でi-FILTER宛の通信と判断した場合、ヘッダーを追記して、i-FILTER用のPoolに転送します。各iRule内のホスト名は、環境にあわせたFQDN/IPアドレスに変更して頂く必要があります。
+   1つ目のiRuleでは、ホスト名でインターネット接続トラフィックと判断した場合、SSLOのExplicit用のVirtual Sererに転送します。2つ目のiRuleでは、ホスト名でi-FILTER宛の通信と判断した場合、ヘッダーを追記して、i-FILTER用のPoolに転送します。各iRule内のホスト名は、環境にあわせたFQDN/IPアドレスに変更して頂く必要があります。
   
-  **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、**Definition** に以下サンプルiRuleを入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。また、以下の２つのiRuleは、1つのファイルにしていただいても構いません。）
+   **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力して、**Definition** に以下サンプルiRuleを入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。また、以下の２つのiRuleは、1つのファイルにしていただいても構いません。）
  
-  例）トラフィックを分ける用のiRule
+   例）トラフィックを分ける用のiRule
 
     .. code-block:: bash
 
-            ### Add this iRule to Explicit HTTP Proxy Virtual Server  ###
-            when HTTP_PROXY_REQUEST {
-                set F5PROXY "bigip.f5jplab.local”   # For block jpg #
-                set F5PROXY2 "10.100.35.221”        # For password bypass #
-                if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 }  {
-                    HTTP::proxy enable
-                } else {
-                    HTTP::proxy disable
-                    virtual sslo_L3ExplicitProxy.app/sslo_L3ExplicitProxy-xp-4
-                    snat automap
-                } 
-            }
+        ### Add this iRule to Explicit HTTP Proxy Virtual Server  ###
+        when HTTP_PROXY_REQUEST {
+            set F5PROXY "bigip.f5jplab.local”   ### For block jpg ###
+            set F5PROXY2 "10.100.35.221”        ### For password bypass ###
+            if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 }  {
+                HTTP::proxy enable
+            } else {
+                HTTP::proxy disable
+                virtual sslo_L3ExplicitProxy.app/sslo_L3ExplicitProxy-xp-4
+                snat automap
+            } 
+        }
 
-  例）ヘッダー追加用のiRule
+   例）ヘッダー追加用のiRule
 
-      .. code-block:: bash
+    .. code-block:: bash
 
-            ###  Add this iRule to Explicit HTTP Proxy Virtual Server ###
-            when HTTP_REQUEST {
-                set F5PROXY "bigip.f5jplab.local” # For block jpg #
-                set F5PROXY2 "10.100.35.221”      # For password bypass #
-                if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 } {
-                    if { [HTTP::method] ne "CONNECT" } {
-                        HTTP::header replace "X-Forwarded-Proto" "http"
-                        pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
-                    }
+        ###  Add this iRule to Explicit HTTP Proxy Virtual Server ###
+        when HTTP_REQUEST {
+            set F5PROXY "bigip.f5jplab.local” ### For block jpg ###
+            set F5PROXY2 "10.100.35.221”      ### For password bypass ###
+            if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 } {
+                if { [HTTP::method] ne "CONNECT" } {
+                    HTTP::header replace "X-Forwarded-Proto" "http"
+                    pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
                 }
             }
+        }
+
 #. Explicit Proxy用のVirtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、プロキシ接続用の **IPアドレス** を入力、**Service Port** にて、プロキシとして利用する **ポート番号** を入力します。
 
     .. image:: images/mod13-5.png
@@ -85,15 +86,16 @@ Explicit HTTPS Proxy用Virtul Serverの作成
 
 #. HTTPSトラフィックにおけるi-FILTER向けヘッダ追加用のiRuleを作成します。このiRuleでは、ヘッダーを追記して、i-FILTER用のPoolに転送します。 **Local Traffic >> iRules** にて、:guilabel:`Create` ボタンを押します。 **任意の名前** を入力して、 Definition に以下サンプル **iRule** を入力し、:guilabel:`Finished` ボタンを押します。（以下のiRuleはあくまでもサンプルとなります。同じ主旨の内容であれば下記と同じでなくても構いません。）
 
-  例）ヘッダー追加用のiRule
+   例）ヘッダー追加用のiRule
 
     .. code-block:: bash
 
-            ### Add this iRule to Explicit HTTPs Proxy Virtual Server ###
-            when HTTP_REQUEST {
-                HTTP::header replace "X-Forwarded-Proto" "https"
-                pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
-            }
+        ### Add this iRule to Explicit HTTPs Proxy Virtual Server ###
+        when HTTP_REQUEST {
+            HTTP::header replace "X-Forwarded-Proto" "https"
+            pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
+        }
+        
 #. ブロック画面内のタイトル画像にSSL接続するためにBIG-IPにてSSLオフロードを行うため、**サーバ証明書** と **秘密鍵** の登録します。 **System >> Certificate Management >> Traffic Certificate Management** にて、**利用するサーバ証明書** と **秘密鍵** の登録します。下記が登録したサーバ証明書のイメージです。ここでは、SANにFQDNとIPアドレスを登録しています。
 
     .. image:: images/mod13-9.png

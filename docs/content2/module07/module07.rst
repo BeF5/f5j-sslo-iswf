@@ -1,4 +1,4 @@
-i-FILTERにてHTTP/HTTPS判別するためのiRuleの作成）
+i-FILTERにてHTTP/HTTPS判別するためのiRuleの作成
 ==================================================================
 
 　i-FILTER PROXY版は、HTTPのリクエストヘッダでHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるためのiRuleを作成します。**X-Forwarded-Proto** というヘッダーに利用プロトコル（http or https）を加えて、HTTPリクエストに挿入します。ここではあわせて、クライアントのIPアドレスも **X-Forwarded-For** に挿入しています。

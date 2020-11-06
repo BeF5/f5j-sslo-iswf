@@ -37,8 +37,8 @@ Explicit HTTP Proxy用Virtual Serverの作成
 
         ### Add this iRule to Explicit HTTP Proxy Virtual Server  ###
         when HTTP_PROXY_REQUEST {
-            set F5PROXY "bigip.f5jplab.local”   ### For block jpg ###
-            set F5PROXY2 "10.100.35.221”        ### For password bypass ###
+            set F5PROXY "bigip.f5jplab.local"   # For block jpg #
+            set F5PROXY2 "10.100.35.221”        # For password bypass #
             if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 }  {
                 HTTP::proxy enable
             } else {
@@ -54,8 +54,8 @@ Explicit HTTP Proxy用Virtual Serverの作成
 
         ###  Add this iRule to Explicit HTTP Proxy Virtual Server ###
         when HTTP_REQUEST {
-            set F5PROXY "bigip.f5jplab.local” ### For block jpg ###
-            set F5PROXY2 "10.100.35.221”      ### For password bypass ###
+            set F5PROXY "bigip.f5jplab.local" # For block jpg #
+            set F5PROXY2 "10.100.35.221”      # For password bypass #
             if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 } {
                 if { [HTTP::method] ne "CONNECT" } {
                     HTTP::header replace "X-Forwarded-Proto" "http"
@@ -95,7 +95,7 @@ Explicit HTTPS Proxy用Virtul Serverの作成
             HTTP::header replace "X-Forwarded-Proto" "https"
             pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
         }
-        
+
 #. ブロック画面内のタイトル画像にSSL接続するためにBIG-IPにてSSLオフロードを行うため、**サーバ証明書** と **秘密鍵** の登録します。 **System >> Certificate Management >> Traffic Certificate Management** にて、**利用するサーバ証明書** と **秘密鍵** の登録します。下記が登録したサーバ証明書のイメージです。ここでは、SANにFQDNとIPアドレスを登録しています。
 
     .. image:: images/mod13-9.png

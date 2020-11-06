@@ -35,10 +35,10 @@ Explicit HTTP Proxy用Virtual Serverの作成
 
     .. code-block:: bash
 
-            ##  Add this iRule to Explicit HTTP Proxy Virtual Server  ##
+            ### Add this iRule to Explicit HTTP Proxy Virtual Server  ###
             when HTTP_PROXY_REQUEST {
-                set F5PROXY "bigip.f5jplab.local”   # For block jpg
-                set F5PROXY2 "10.100.35.221”        # For password bypass
+                set F5PROXY "bigip.f5jplab.local”   # For block jpg #
+                set F5PROXY2 "10.100.35.221”        # For password bypass #
                 if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 }  {
                     HTTP::proxy enable
                 } else {
@@ -52,10 +52,10 @@ Explicit HTTP Proxy用Virtual Serverの作成
 
       .. code-block:: bash
 
-            ##  Add this iRule to Explicit HTTP Proxy Virtual Server  ##
+            ###  Add this iRule to Explicit HTTP Proxy Virtual Server ###
             when HTTP_REQUEST {
-                set F5PROXY "bigip.f5jplab.local” # For block jpg
-                set F5PROXY2 "10.100.35.221”      # For password bypass
+                set F5PROXY "bigip.f5jplab.local” # For block jpg #
+                set F5PROXY2 "10.100.35.221”      # For password bypass #
                 if { [HTTP::host] contains $F5PROXY || [HTTP::host] contains $F5PROXY2 } {
                     if { [HTTP::method] ne "CONNECT" } {
                         HTTP::header replace "X-Forwarded-Proto" "http"
@@ -63,7 +63,6 @@ Explicit HTTP Proxy用Virtual Serverの作成
                     }
                 }
             }
-
 #. Explicit Proxy用のVirtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、プロキシ接続用の **IPアドレス** を入力、**Service Port** にて、プロキシとして利用する **ポート番号** を入力します。
 
     .. image:: images/mod13-5.png
@@ -95,7 +94,6 @@ Explicit HTTPS Proxy用Virtul Serverの作成
                 HTTP::header replace "X-Forwarded-Proto" "https"
                 pool ssloS_iFILTERProxy.app/ssloS_iFILTERProxy
             }
-
 #. ブロック画面内のタイトル画像にSSL接続するためにBIG-IPにてSSLオフロードを行うため、**サーバ証明書** と **秘密鍵** の登録します。 **System >> Certificate Management >> Traffic Certificate Management** にて、**利用するサーバ証明書** と **秘密鍵** の登録します。下記が登録したサーバ証明書のイメージです。ここでは、SANにFQDNとIPアドレスを登録しています。
 
     .. image:: images/mod13-9.png
@@ -152,7 +150,7 @@ i-FILTER側の設定
 #. パスワードブロック解除が設定されているURLへ接続し、パスワード入力画面が表示されることを確認します。
 
     .. image:: images/mod13-18.png
-       :scale: 60%
+       :scale: 62%
        :align: center
     |  
 #. 解除パスワード入力後、無事WEB接続ができる事を確認します。

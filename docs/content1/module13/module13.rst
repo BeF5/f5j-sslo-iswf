@@ -1,7 +1,7 @@
 i-FILTERブロック画面のタイトル画像の表示、パスワードブロック解除の設定
 ====================================================================
 
-　10.3章にて、SSLO連携をするとブロック画面のタイトルが標準では表示されないと記載しましたが、以下の設定を追加することによって、表示させることが可能です。本設定を行うことにより、パスワード入力によるブロック解除も連携が可能となります。上記を実現するためには、下図の4つのVirtual Serverが追加で必要となります。ここでは、下図の④②①③の順で作成していきます。
+　1.11.3.にて、SSLO連携をするとブロック画面のタイトルが標準では表示されないと記載しましたが、以下の設定を追加することによって、表示させることが可能です。本設定を行うことにより、パスワード入力によるブロック解除も連携が可能となります。上記を実現するためには、下図の4つのVirtual Serverが追加で必要となります。ここでは、下図の④②①③の順で作成していきます。
 
 .. image:: images/mod13-1.png
 |  
@@ -28,7 +28,7 @@ ICAP service request用Virtual Serverの作成
     .. image:: images/mod13-5.png
     | 
 
-Transparent Proxy用Virtual Serverの作成
+Explicit HTTPS Proxy用Virtual Serverの作成
 --------------------------------------------
 
 #. まず、ICAP用のVirtual Serverを呼び出すためのRequest Adaptプロファイルを作成します。**Local Traffic >> Profiles >> Services >> Request Adapt** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Internal Virtual Name** にて、作成済みの **Virtual Sever** を選択し、**Preview Size** にて、**0** を入力し、:guilabel:`Finished` ボタンを押します。
@@ -48,13 +48,13 @@ Transparent Proxy用Virtual Serverの作成
 
     .. code-block:: bash
 
-            ###  Add this iRule to Transparent Virtual Server ###
+            ###  Add this iRule to Explicit HTTPS Virtual Server ###
             when HTTP_REQUEST {
                 set OLDURI [HTTP::uri]
                 HTTP::uri "https://[HTTP::host]$OLDURI"
             }
 
-#. 次に、SSL用のTransparent Virtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、**0.0.0.0/0** を入力、**Service Port** にて、**15080** と入力します。
+#. 次に、SSL用のExplicit HTTPS Virtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、**0.0.0.0/0** を入力、**Service Port** にて、**15080** と入力します。
 
     .. image:: images/mod13-9.png
     |  
@@ -71,7 +71,7 @@ Transparent Proxy用Virtual Serverの作成
     .. image:: images/mod13-12.png
     |  
 
-Explicit Proxy用Virtual Serverの作成
+Explicit HTTP Proxy用Virtual Serverの作成
 --------------------------------------------
 
 #. まず、プロキシ用のExplicit Profileを作成します。**Local Traffic >> Profiles >> Services >> HTTP** にて、:guilabel:`Create` ボタンを押します。**Proxy Mode** にて、**Explicit** を選択します。
@@ -121,7 +121,7 @@ Explicit Proxy用Virtual Serverの作成
             }
         }
 
-#. 次にExplicit Proxy用のVirtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、プロキシ接続用の **IPアドレス** を入力、**Service Port** にて、プロキシとして利用する **ポート番号** を入力します。
+#. 次にExplicit HTTP Proxy用のVirtual Serverを作成します。**Local Traffic >> Virtual Servers** にて、:guilabel:`Create` ボタンを押します。**任意の名前** を入力し、**Destination Address/Mask** にて、プロキシ接続用の **IPアドレス** を入力、**Service Port** にて、プロキシとして利用する **ポート番号** を入力します。
 
     .. image:: images/mod13-15.png
     |  

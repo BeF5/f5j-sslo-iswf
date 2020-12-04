@@ -37,7 +37,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-9.png
     |  
-#. **Service Definition** にて、**Auto Manage Addresses** のチェックをはずし、SSLOからi-FILTER ProxyへHTTPトラフィックを転送するVLAN, Self IPの情報を入力します。 （検証環境の都合でAuto Manage Addressesは利用しておりません。）
+#. **Service Definition** にて、**Auto Manage Addresses** のチェックをはずし、SSLOからi-FILTER ProxyへHTTPトラフィックを転送するVLAN, Self IPの情報を入力します。 （ここでは、検証環境の都合でAuto Manage Addressesは利用しておりません。）
 
     .. image:: images/mod10-10.png
     |  

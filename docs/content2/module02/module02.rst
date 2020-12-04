@@ -13,6 +13,10 @@
          "i-FILTER Proxy Server (Linux) ", "| Ver.10.41R01-20200807 (CentOS v7.7.1908 ※）
          | ※ デジタルアーツ様による製品サポートOSはRed Hat Enterprise Linuxとなります。"
 
+   .. note::
+    - （各F5代理店でサポート可能な範囲において、）極力最新のバージョンを適用頂くことをお勧め致します。最新のバージョンはAskF5でご確認下さい。
+    - Proxy認証を行いたい場合、i-FILTERのログにユーザ名を出力したい場合は、APMのライセンスが必要となります。
+
 #. 本ガイドにおける構成イメージ
 
    .. image:: images/mod2-1.png

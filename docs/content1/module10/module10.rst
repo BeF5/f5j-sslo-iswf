@@ -115,3 +115,6 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-28.png
     |  
+    
+.. note::
+    - セキュリティデバイスがICAPサービス、HTTPサービスの場合、SSL復号していないトラフィックをサービスチェーンに流せません。

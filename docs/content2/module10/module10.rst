@@ -37,9 +37,12 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-9.png
     |  
-#. **Service Definition** にて、**Auto Manage Addresses** のチェックをはずし、SSLOからi-FILTER ProxyへHTTPトラフィックを転送するVLAN, Self IPの情報を入力します。 （検証環境の都合でAuto Manage Addressesは利用しておりませんが、基本は利用頂くことを推奨しています。）
+#. **Service Definition** にて、**Auto Manage Addresses** のチェックをはずし、SSLOからi-FILTER ProxyへHTTPトラフィックを転送するVLAN, Self IPの情報を入力します。 （検証環境の都合でAuto Manage Addressesは利用しておりません。）
 
     .. image:: images/mod10-10.png
+    |  
+    .. note::
+        - SSL可視化ゾーン（ここではi-FILTER Proxy版）では、HTTPトラフィックは暗号化されておりませんので、第三者からのアクセスを避ける必要があります。そこで、SSLOでは、Auto Manage Addresses（RFC2544に定められているインターナル利用アドレス）をセキュリティ機器に利用頂くことを推奨しております。
     |  
 #. i-FILTER Proxyのインライン側の **IPアドレス** と **ポート番号** を入力し、:guilabel:`Done` を押します。
 
@@ -113,3 +116,6 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-28.png
     |  
+
+.. note::
+    - セキュリティデバイスがICAPサービス、HTTPサービスの場合、SSL復号していないトラフィックをサービスチェーンに流せません。

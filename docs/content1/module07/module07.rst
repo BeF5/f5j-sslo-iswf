@@ -85,7 +85,7 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
          "``Replace`` ``HTTP URI`` ``full string`` with value ``tcl:[HTTP::header values urihttps]`` at ``request`` time.", "必須"
          "``Remove`` ``HTTP Header`` named ``urihttps`` at ``request`` time.", "必須"
          "``Disable`` ``request adapt`` at ``request`` time.", "必須"
-         "``Disable`` ``response adapt`` at ``response`` time., "必須"
+         "``Disable`` ``response adapt`` at ``response`` time.", "必須"
     .. csv-table:: 
          :header: "Match all of the following conditions:", "必要有無"
          :widths: 40, 5
@@ -99,5 +99,5 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
          "``Replace`` ``HTTP URI`` ``full string`` with value ``tcl:[HTTP::header values urihttp]`` at ``request`` time.", "必須"
          "``Remove`` ``HTTP Header`` named ``urihttp`` at ``request`` time.", "必須"
          "``Disable`` ``request adapt`` at ``request`` time.", "必須"
-         "``Disable`` ``response adapt`` at ``response`` time., "必須"
+         "``Disable`` ``response adapt`` at ``response`` time.", "必須"
     |  

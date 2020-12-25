@@ -55,7 +55,7 @@ SSLO Guided ConfigurationによるSSLOの設定
     |  
 #. **ICAP Policy** に既に作成済みのヘッダをもとに戻すための **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。
 
-    .. image:: images/mod10-1４.png
+    .. image:: images/mod10-14.png
     | 　
 #. :guilabel:`Save＆Next` ボタンを押します。
 
@@ -97,7 +97,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-24.png
     |  
-#. 必要に応じて、設定内容を見直し、 :guilabel:`Save＆Next` ボタンを押します。
+#. 必要に応じて、設定内容を見直し、 :guilabel:`Deploy` ボタンを押します。
 
     .. image:: images/mod10-25.png
     |  
@@ -117,15 +117,15 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-29.png
     |  
-#. モニターの情報をはずします。
+#. ヘッダをリストアするサービスに紐づくPoolのモニターの情報をはずします。（設定を外す前は存在しないサーバに対して、モニターを投げているので、AvailabilityがOfflineとなっているはずです。）
 
     .. image:: images/mod10-30.png
     | 
-#. 次に既に作成済みの **iRule** を追加します。**Local Traffic >> Virtual Servers>> ** において、**ssloS_XXXX(任意)-t-4** という名称のVirtual Serverを選択し、**Resources** タブを選択、HTTPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。 
+#. 既に作成済みの **iRule** を追加します。**Local Traffic >> Virtual Servers>>** において、**ssloS_XXXX(任意)-t-4** という名称のVirtual Serverを選択し、**Resources** タブを選択、HTTPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。 
 
     .. image:: images/mod10-31.png
     |  
-#. 次にICAPリクエストヘッダに加えるための **iRule** を追加します。**Local Traffic >> Virtual Servers** において、**ssloS_XXXX(任意)-req** という名称のVirtual Serverを選択し、**Resources** タブを選択、ICAPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。
+#. ICAPリクエストヘッダに加えるための **iRule** を追加します。**Local Traffic >> Virtual Servers** において、**ssloS_XXXX(任意)-req** という名称のVirtual Serverを選択し、**Resources** タブを選択、ICAPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。
 
     .. image:: images/mod10-32.png
     |  

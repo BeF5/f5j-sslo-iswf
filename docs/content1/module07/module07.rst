@@ -1,7 +1,7 @@
 i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
 ==================================================================
 
-　i-FILTER ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。
+　i-FILTER ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にi-FILTEはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。また、i-FILTERによるURL Filteringチェック後に、リクエストヘッダを元の値に戻すためのLocal Traffic Policyルールも作成します。こちらのルールでは実際にICAP通信は行わないので、ICAP通信を無効にします。
 
 #. **Local Traffic >> Policies >> Policies List** にて、:guilabel:`Create` ボタンを押します。
 
@@ -21,10 +21,9 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
     |  
     .. csv-table:: 
          :header: "Match all of the following conditions:", "必要有無"
-         :widths: 50, 5
+         :widths: 40, 5
 
-         "**TCP port is any of 443** at", "必須"
-         "**client accepted** time.", "必須"
+         "**TCP port is any of 443** at **client accepted** time.", "必須"
          "Apply to traffic on **local** side of **external** interface","必須"
     |  
 #. 同様に、**Do the following when the traffic is matched:** の :guilabel:`＋` マークをクリックし、以下のように入力し、:guilabel:`Save` ボタンを押します。（デバック用のログルールは任意で追加します。）
@@ -35,7 +34,9 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
          :header: "Do the following when the traffic is matched:", "必要有無"
          :widths: 95, 5
 
+         "**Insert** **HTTP Header** named **urihttps** with value **tcl:[HTTP::uri]** at **request** time.", "必須"
          "**Replace HTTP URI full string** with value **tcl:https://[HTTP::host][HTTP::uri]** at **request** time.", "必須"
+         "**Disable** **response adapt** at **response** time.", "必須"
          "**Log** message **tcl: HTTPs(443) URI was replaced to: [HTTP::uri]** at **request** time.", "任意"
          "Facility: **local0** Priority: **info**","任意" 
     |  
@@ -45,16 +46,17 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
     |  
     .. csv-table:: 
          :header: "Match all of the following conditions:", "必要有無"
-         :widths: 55, 5
+         :widths: 40, 5
 
-         "**TCP port is any of 80** at", "必須"
-         "**client accepted** time.", "必須"
+         "**TCP port is any of 80** at **client accepted** time.", "必須"
          "Apply to traffic on **local** side of **external** interface","必須"
     .. csv-table:: 
          :header: "Do the following when the traffic is matched:", "必要有無"
-         :widths: 55, 5
+         :widths: 95, 5
 
+         "**Insert** **HTTP Header** named **urihttp** with value **tcl:[HTTP::uri]** at **request** time.", "必須"
          "**Replace HTTP URI full string** with value **tcl:http://[HTTP::host][HTTP::uri]** at **request** time.", "必須"
+         "**Disable** **response adapt** at **response** time.", "必須"
          "Log message tcl: HTTP(80) URI was replaced to: [HTTP::uri] at request time.", "任意"
          "Facility: **local0** Priority: **info**","任意"      
     |  
@@ -66,4 +68,36 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
 
     .. image:: images/mod7-8.png
     |  
-    
+#. 上記手順と同様に、以下のようなリクエストヘッダをもとに戻すLocal Traffic Policyルールを作成します。
+
+    .. image:: images/mod7-9.png
+    |  
+    .. csv-table:: 
+         :header: "Match all of the following conditions:", "必要有無"
+         :widths: 40, 5
+
+         "**TCP port is any of 443** at **client accepted** time.", "必須"
+         "Apply to traffic on **local** side of **external** interface","必須"
+    .. csv-table:: 
+         :header: "Do the following when the traffic is matched:", "必要有無"
+         :widths: 95, 5
+
+         "**Replace** **HTTP URI** **full string** with value **tcl:[HTTP::header values urihttps]** at **request** time.", "必須"
+         "**Remove** **HTTP Header** named **urihttps** at **request** time.", "必須"
+         "**Disable** **request adapt** at **request** time.", "必須"
+         "**Disable** **response adapt** at **response** time., "必須"
+    .. csv-table:: 
+         :header: "Match all of the following conditions:", "必要有無"
+         :widths: 40, 5
+
+         "**TCP port is any of 80** at **client accepted** time.", "必須"
+         "Apply to traffic on **local** side of **external** interface","必須"
+    .. csv-table:: 
+         :header: "Do the following when the traffic is matched:", "必要有無"
+         :widths: 95, 5
+
+         "**Replace** **HTTP URI** **full string** with value **tcl:[HTTP::header values urihttp]** at **request** time.", "必須"
+         "**Remove** **HTTP Header** named **urihttp** at **request** time.", "必須"
+         "**Disable** **request adapt** at **request** time.", "必須"
+         "**Disable** **response adapt** at **response** time., "必須"
+    |  

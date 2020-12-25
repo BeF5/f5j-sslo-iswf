@@ -23,7 +23,7 @@ i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設
          :header: "Match all of the following conditions:", "必要有無"
          :widths: 40, 5
 
-         "**TCP port is any of 443** at **client accepted** time.", "必須"
+         "``TCP`` ``port`` ``is`` ``any of`` ``443`` at **client accepted** time.", "必須"
          "Apply to traffic on **local** side of **external** interface","必須"
     |  
 #. 同様に、**Do the following when the traffic is matched:** の :guilabel:`＋` マークをクリックし、以下のように入力し、:guilabel:`Save` ボタンを押します。（デバック用のログルールは任意で追加します。）

@@ -1,7 +1,7 @@
-i-FILTERにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
+InterSafe WebFilterにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
 ==================================================================
 
-　i-FILTER ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。i-FILTERがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にi-FILTEはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。また、i-FILTERによるURL Filteringチェック後に、リクエストヘッダを元の値に戻すためのLocal Traffic Policyルールも作成します。こちらのルールでは実際にICAP通信は行わないので、ICAP通信を無効にします。
+　InterSafe WebFilter ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。InterSafe WebFilterがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にi-FILTEはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。また、InterSafe WebFilterによるURL Filteringチェック後に、リクエストヘッダを元の値に戻すためのLocal Traffic Policyルールも作成します。こちらのルールでは実際にICAP通信は行わないので、ICAP通信を無効にします。
 
 #. **Local Traffic >> Policies >> Policies List** にて、:guilabel:`Create` ボタンを押します。
 

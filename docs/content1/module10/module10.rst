@@ -33,11 +33,11 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-8.png
     |  
-#. **任意の名前** を設定し、**ICAP Devices** に **i-FILTERのIPアドレス** と **ポート番号** を設定し、:guilabel:`Done` を押します。
+#. **任意の名前** を設定し、**ICAP Devices** に **InterSafe WebFilterのIPアドレス** と **ポート番号** を設定し、:guilabel:`Done` を押します。
 
     .. image:: images/mod10-9.png
     |  
-#. **Request Modification URI Path** に **/REQMOD** を入力し、**Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。（i-FILTER ICAP版は **ICAP Preview** に対応していないので、**０** を入力します。）
+#. **Request Modification URI Path** に **/REQMOD** を入力し、**Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。（InterSafe WebFilter ICAP版は **ICAP Preview** に対応していないので、**０** を入力します。）
 
     .. image:: images/mod10-10.png
     |  
@@ -65,7 +65,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-16.png
     |  
-#. **任意の名前** を設定し、先程作成したサービスを右に移動させ、:guilabel:`Save` ボタンを押します。(i-FILTERのサービスが上にくるようにします。)
+#. **任意の名前** を設定し、先程作成したサービスを右に移動させ、:guilabel:`Save` ボタンを押します。(InterSafe WebFilterのサービスが上にくるようにします。)
 
     .. image:: images/mod10-17.png
     |  
@@ -113,7 +113,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-28.png
     |  
-#. i-FILTERと連携するサービスに関しては認証ヘッダを挿入するために、また、ヘッダをリストアするサービスに関してはモニタを停止するため、Protectedの **鍵** マークを外します。
+#. InterSafe WebFilterと連携するサービスに関しては認証ヘッダを挿入するために、また、ヘッダをリストアするサービスに関してはモニタを停止するため、Protectedの **鍵** マークを外します。
 
     .. image:: images/mod10-29.png
     |  

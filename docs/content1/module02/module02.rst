@@ -10,12 +10,11 @@
          :widths: 30, 40
 
          "F5 SSL Orchestrator", "v15.1.2-0.0.9Final ‒ 7.5.2"
-         "i-FILTER ICAP Server (Linux) ", "| Ver.10.42R01-20200923 (CentOS v7.7.1908 ※）
-         | ※ デジタルアーツ様による製品サポートOSはRed Hat Enterprise Linuxとなります。"
+         "InterSafe WebFilter ICAP Server  ", "| Ver.xxx"
 
    .. note::
     - （各F5代理店でサポート可能な範囲において、）極力最新のバージョンを適用頂くことをおすすめ致します。最新のバージョンはAskF5でご確認下さい。
-    - Proxy認証を行いたい場合、もしくは、i-FILTERのログにADユーザ名を出力したい場合は、APMのライセンスが必要となります。   
+    - Proxy認証を行いたい場合、もしくは、InterSafe WebFilterのログにADユーザ名を出力したい場合は、APMのライセンスが必要となります。   
 
 #. 本ガイドにおける構成イメージ
 

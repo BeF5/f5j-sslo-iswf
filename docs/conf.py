@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'F5 SSLO セットアップガイド　i-FILTER編'
+project = 'F5 SSLO セットアップガイド　InterSafe WebFilter編'
 copyright = '2020, F5ネットワークスジャパン合同会社'
 author = 'F5ネットワークスジャパン合同会社'
 

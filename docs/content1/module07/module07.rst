@@ -1,7 +1,7 @@
 InterSafe WebFilterにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
 ==================================================================
 
-　InterSafe WebFilter ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。InterSafe WebFilterがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にi-FILTEはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。また、InterSafe WebFilterによるURL Filteringチェック後に、リクエストヘッダを元の値に戻すためのLocal Traffic Policyルールも作成します。こちらのルールでは実際にICAP通信は行わないので、ICAP通信を無効にします。
+　InterSafe WebFilter ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。InterSafe WebFilterがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にInterSafe WebFilterはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。
 
 #. **Local Traffic >> Policies >> Policies List** にて、:guilabel:`Create` ボタンを押します。
 
@@ -67,37 +67,4 @@ InterSafe WebFilterにてHTTP/HTTPS判別するための設定（Local Traffic P
 #. :guilabel:`Publish` ボタンを押すと、以下のようになります。
 
     .. image:: images/mod7-8.png
-    |  
-#. 上記手順と同様に、以下のようなリクエストヘッダをもとに戻すLocal Traffic Policyルールを作成します。
-
-    .. image:: images/mod7-9.png
-    |  
-    .. csv-table:: 
-         :header: "Match all of the following conditions:", "必要有無"
-         :widths: 40, 5
-
-         "``TCP`` ``port`` ``is`` ``any of`` ``443`` at ``client accepted`` time.", "必須"
-         "Apply to traffic on ``local`` side of ``external`` interface","必須"
-    .. csv-table:: 
-         :header: "Do the following when the traffic is matched:", "必要有無"
-         :widths: 95, 5
-
-         "``Replace`` ``HTTP URI`` ``full string`` with value ``tcl:[HTTP::header values urihttps]`` at ``request`` time.", "必須"
-         "``Remove`` ``HTTP Header`` named ``urihttps`` at ``request`` time.", "必須"
-         "``Disable`` ``request adapt`` at ``request`` time.", "必須"
-         "``Disable`` ``response adapt`` at ``response`` time.", "必須"
-    .. csv-table:: 
-         :header: "Match all of the following conditions:", "必要有無"
-         :widths: 40, 5
-
-         "``TCP`` ``port`` ``is`` ``any of`` ``80`` at ``client accepted`` time.", "必須"
-         "Apply to traffic on ``local`` side of ``external`` interface","必須"
-    .. csv-table:: 
-         :header: "Do the following when the traffic is matched:", "必要有無"
-         :widths: 95, 5
-
-         "``Replace`` ``HTTP URI`` ``full string`` with value ``tcl:[HTTP::header values urihttp]`` at ``request`` time.", "必須"
-         "``Remove`` ``HTTP Header`` named ``urihttp`` at ``request`` time.", "必須"
-         "``Disable`` ``request adapt`` at ``request`` time.", "必須"
-         "``Disable`` ``response adapt`` at ``response`` time.", "必須"
     |  

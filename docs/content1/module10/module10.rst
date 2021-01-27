@@ -41,26 +41,6 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-10.png
     |  
-#. :guilabel:`Add Service` を選択します。
-
-    .. image:: images/mod10-11.png
-    |  
-#. **Generic ICAP Service** を選択し、:guilabel:`Add` ボタンを押します。
-
-    .. image:: images/mod10-12.png
-    |  
-#. **任意の名前** を設定し、**ICAP Devices** に **任意のIPアドレス** と **任意のポート番号** を設定し、:guilabel:`Done` を押します。（こちらのサービスは実際には利用しませんので、設定する情報は何でも構いません。）
-
-    .. image:: images/mod10-13.png
-    |  
-#. **ICAP Policy** に既に作成済みのヘッダをもとに戻すための **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。
-
-    .. image:: images/mod10-14.png
-    | 　
-#. :guilabel:`Save＆Next` ボタンを押します。
-
-    .. image:: images/mod10-15.png
-    |  
 #. **Service Chain List** で :guilabel:`Add` を押します。
 
     .. image:: images/mod10-16.png

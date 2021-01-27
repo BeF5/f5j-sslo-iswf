@@ -93,14 +93,10 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-28.png
     |  
-#. InterSafe WebFilterと連携するサービスに関しては認証ヘッダを挿入するために、また、ヘッダをリストアするサービスに関してはモニタを停止するため、Protectedの **鍵** マークを外します。
+#. InterSafe WebFilterと連携するサービスに関しては認証ヘッダを挿入するために、Protectedの **鍵** マークを外します。
 
     .. image:: images/mod10-29.png
     |  
-#. ヘッダをリストアするサービスに紐づくPoolのモニターの情報をはずします。（設定を外す前は存在しないサーバに対して、モニターを投げているので、AvailabilityがOfflineとなっているはずです。）
-
-    .. image:: images/mod10-30.png
-    | 
 #. 既に作成済みの **iRule** を追加します。**Local Traffic >> Virtual Servers>>** において、**ssloS_XXXX(任意)-t-4** という名称のVirtual Serverを選択し、**Resources** タブを選択、HTTPリクエストヘッダに認証情報を挿入するための **iRule** を選択し、:guilabel:`Finished` を押します。 
 
     .. image:: images/mod10-31.png

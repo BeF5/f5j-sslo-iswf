@@ -37,7 +37,7 @@ SSLO Guided ConfigurationによるSSLOの設定
 
     .. image:: images/mod10-9.png
     |  
-#. **Request Modification URI Path** に **/REQMOD** を入力し、**Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。（InterSafe WebFilter ICAP版は **ICAP Preview** に対応していないので、**０** を入力します。）
+#. **Preview Max Length** に **0** を入力し、**ICAP Policy** に既に作成済みの **Local Traffic Policy** を選択し、:guilabel:`Save` を押します。:guilabel:`Save＆Next` を押します。
 
     .. image:: images/mod10-10.png
     |  

@@ -1,7 +1,7 @@
 InterSafe WebFilterにてHTTP/HTTPS判別するための設定（Local Traffic Policyの設定）
 ==================================================================
 
-　InterSafe WebFilter ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。InterSafe WebFilterがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。同時にInterSafe WebFilterはICAPレスポンスはチェックしないので、ICAPレスポンスチェックを無効にします。
+　InterSafe WebFilter ICAP版は、ICAPのリクエストヘッダの一部でHTTPサーバへの通信かHTTPSサーバへの通信かを判別しています。InterSafe WebFilterがHTTP/HTTPS判別可能となるようにLocal Traffic Policyにてルールを作成します。
 
 #. **Local Traffic >> Policies >> Policies List** にて、:guilabel:`Create` ボタンを押します。
 
@@ -54,7 +54,7 @@ InterSafe WebFilterにてHTTP/HTTPS判別するための設定（Local Traffic P
          :header: "Do the following when the traffic is matched:", "必要有無"
          :widths: 95, 5
 
-         "``Insert`` ``HTTP Header`` named ``urihttp`` with value ``tcl:[HTTP::uri]** at **request`` time.", "必須"
+         "``Insert`` ``HTTP Header`` named ``urihttp`` with value ``tcl:[HTTP::uri]`` at ``request`` time.", "必須"
          "``Replace`` ``HTTP URI`` ``full string`` with value ``tcl:http://[HTTP::host][HTTP::uri]`` at ``request`` time.", "必須"
          "``Disable`` ``response adapt`` at ``response`` time.", "必須"
          "``Log`` message ``tcl: HTTP(80) URI was replaced to: [HTTP::uri]`` at ``request`` time.", "任意"

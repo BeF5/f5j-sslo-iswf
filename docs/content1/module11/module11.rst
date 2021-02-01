@@ -49,11 +49,7 @@ SSLOとの認証連携設定
     .. image:: images/mod11-8.png
     | 
 #. 管理画面から[サーバ管理]-[LDAPサーバ設定]を開き、ICAPクライアントで指定しているActiveDirectoryを指定します。
-
-    .. image:: images/mod11-9.png
     | 
 #. [LDAPユーザ同期へ]をクリックして認証するアカウントの選択、またはLDAP自動連携機能を設定します。
-
-    .. image:: images/mod11-10.png
     | 
 

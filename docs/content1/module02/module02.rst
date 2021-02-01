@@ -10,7 +10,7 @@
          :widths: 30, 40
 
          "F5 SSL Orchestrator", "v15.1.2-0.0.9Final ‒ 7.5.2"
-         "InterSafe WebFilter ICAP Server  ", "| Ver.xxx"
+         "InterSafe WebFilter", "| Ver.9.1 Build1501"
 
    .. note::
     - （各F5代理店でサポート可能な範囲において、）極力最新のバージョンを適用頂くことをおすすめ致します。最新のバージョンはAskF5でご確認下さい。

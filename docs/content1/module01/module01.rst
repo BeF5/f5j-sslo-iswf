@@ -1,7 +1,7 @@
-F5 SSLOとInterSafe WebFilter ICAP版連携の流れ
+F5 SSLOとInterSafe WebFilter連携の流れ
 ======================================
 
-F5 SSLOとInterSafe WebFilter　ICAP版の連携の流れは以下の通りです。
+F5 SSLOとInterSafe WebFilterの連携の流れは以下の通りです。
 
 .. figure:: images/mod1-1.png
    :scale: 100%
